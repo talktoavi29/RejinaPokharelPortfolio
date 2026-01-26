@@ -3,101 +3,105 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Services | Asmi Pokharel</title>
+  <title>Services | Asmi on mic</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <nav class="nav">
-        <a class="brand" href="index.html">
-          <img src="assets/img/logo.png" alt="Logo">
-          <div>
-            <div>Asmi Pokharel</div>
-            <small>Emcee • Event Host • Speaker</small>
-          </div>
-        </a>
-        <button class="menu-btn" data-menu-btn aria-label="Open menu">Menu</button>
-        <div class="navlinks" data-navlinks>
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="media.html">Media</a>
-          <a href="booking.html">Book</a>
-          <a href="events.html">Events</a>
-        </div>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="nav-wrap">
+      <!-- <a href="index.html" class="brand-mini">
+        <img src="assets/img/logo.png" alt="Asmi on mic logo">
+      </a> -->
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a class="active" href="services.html">Services</a>
+        <a href="media.html">Media</a>
+        <a href="booking.html">Booking</a>
+        <a href="events.html">Events</a>
       </nav>
+
+      <a class="nav-cta" href="booking.html">Book Now</a>
     </div>
   </header>
 
-  <section class="section">
-    <div class="container">
-      <h2>Services & Events</h2>
-      <p class="lead">Clear categories so visitors instantly know if she’s right for their event.</p>
-
-      <div class="grid-3">
-        <div class="card feature">
-          <span class="badge">Conference</span>
-          <h3>Conferences & Summits</h3>
-          <p>Open/close, speaker intros, timekeeping, audience energy, transitions.</p>
-        </div>
-        <div class="card feature">
-          <span class="badge">Panels</span>
-          <h3>Panels & Moderation</h3>
-          <p>Thoughtful questions, respectful flow, and strong audience engagement.</p>
-        </div>
-        <div class="card feature">
-          <span class="badge">Corporate</span>
-          <h3>Corporate Events</h3>
-          <p>A polished, brand-safe experience for teams, clients, and leadership.</p>
-        </div>
-        <div class="card feature">
-          <span class="badge">Community</span>
-          <h3>Community Programs</h3>
-          <p>High warmth, cultural awareness, and inclusive stage presence.</p>
-        </div>
-        <div class="card feature">
-          <span class="badge">Celebrations</span>
-          <h3>Weddings & Celebrations</h3>
-          <p>Elegant announcements, timeline coordination, games, special moments.</p>
-        </div>
-        <div class="card feature">
-          <span class="badge">Speaker</span>
-          <h3>Speaking</h3>
-          <p>Keynotes, workshops, and talks tailored to your audience.</p>
-        </div>
+  <!-- Page Banner -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-hero-brand">
+        <img src="assets/img/logo.png" alt="Asmi on mic logo">
       </div>
 
-      <div class="card hero-card" style="margin-top:18px;">
-        <h3 style="margin-top:0;">What’s included</h3>
-        <ul style="margin:0; color: var(--muted);">
-          <li>Pre-event planning call & run-of-show review</li>
-          <li>Vendor coordination (planner/DJ/AV) as needed</li>
-          <li>On-stage hosting and timeline management</li>
-          <li>Post-event notes and feedback</li>
-        </ul>
-        <div style="margin-top:14px;">
-          <a class="btn primary" href="booking.html">Check availability</a>
-        </div>
+      <div class="page-hero-text">
+        <h1>Services</h1>
+        <p>Clear categories so visitors instantly know if she’s right for their event.</p>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="foot">
-        <div>© <span id="year"></span> Asmi Pokharel. All rights reserved.</div>
-        <div class="social">
-          <a href="#" aria-label="Instagram">Instagram</a>
-          <a href="#" aria-label="YouTube">YouTube</a>
-          <a href="#" aria-label="LinkedIn">LinkedIn</a>
-        </div>
+  <!-- Content -->
+  <main class="section">
+    <h2 style="margin-top:0;">Services & Events</h2>
+    <p style="margin-top:8px;">Clear categories so visitors instantly know if she’s right for their event.</p>
+
+    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin-top:18px;">
+      <div class="card">
+        <span class="pill">Conference</span>
+        <h3 style="margin:10px 0 6px;">Conferences & Summits</h3>
+        <p>Open/close, speaker intros, timekeeping, audience energy, transitions.</p>
+      </div>
+
+      <div class="card">
+        <span class="pill">Panels</span>
+        <h3 style="margin:10px 0 6px;">Panels & Moderation</h3>
+        <p>Thoughtful questions, respectful flow, and strong audience engagement.</p>
+      </div>
+
+      <div class="card">
+        <span class="pill">Corporate</span>
+        <h3 style="margin:10px 0 6px;">Corporate Events</h3>
+        <p>A polished, brand-safe experience for teams, clients, and leadership.</p>
+      </div>
+
+      <div class="card">
+        <span class="pill">Community</span>
+        <h3 style="margin:10px 0 6px;">Community Programs</h3>
+        <p>High warmth, cultural awareness, and inclusive stage presence.</p>
+      </div>
+
+      <div class="card">
+        <span class="pill">Celebrations</span>
+        <h3 style="margin:10px 0 6px;">Weddings & Celebrations</h3>
+        <p>Elegant announcements, timeline coordination, games, special moments.</p>
+      </div>
+
+      <div class="card">
+        <span class="pill">Speaker</span>
+        <h3 style="margin:10px 0 6px;">Speaking</h3>
+        <p>Keynotes, workshops, and talks tailored to your audience.</p>
       </div>
     </div>
-  </footer>
 
+    <div class="card" style="margin-top:18px;">
+      <h3 style="margin-top:0;">What’s included</h3>
+      <ul style="margin:0; padding-left:18px;">
+        <li>Pre-event planning call & run-of-show review</li>
+        <li>Vendor coordination (planner/DJ/AV) as needed</li>
+        <li>On-stage hosting and timeline management</li>
+        <li>Post-event notes and feedback</li>
+      </ul>
+
+      <div style="margin-top:14px;">
+        <a class="nav-cta" href="booking.html">Check availability</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>© <span id="year"></span> Asmi on mic</footer>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-  <script src="assets/js/main.js"></script>
+
 </body>
 </html>

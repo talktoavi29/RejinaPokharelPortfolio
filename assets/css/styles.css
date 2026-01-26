@@ -1,16 +1,11 @@
 /* ==========================================
    Asmi on mic — Matte Rose & Dusty Mauve Theme
-   Replace entire styles.css with this file
+   Full replacement styles.css
 ========================================== */
 
-/* -----------------------------
-   THEME VARIABLES
------------------------------- */
 :root{
-  /* Matte Rose + Dusty Mauve */
   --bg-rose: #e7c6c6;
   --bg-rose-2:#dcb1b1;
-
   --surface: #edd2d2;
   --surface-2:#f3dede;
 
@@ -18,7 +13,6 @@
   --text: #3b2f2f;
   --text-soft: rgba(59,47,47,0.72);
   --stroke: rgba(155,109,109,0.35);
-
   --shadow: rgba(0,0,0,0.10);
 
   --btn: #b78484;
@@ -31,16 +25,8 @@
   --max-width: 1100px;
 }
 
-/* -----------------------------
-   GLOBAL RESET
------------------------------- */
-*{
-  box-sizing: border-box;
-}
-
-html, body{
-  height: 100%;
-}
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
 
 body{
   margin: 0;
@@ -49,31 +35,13 @@ body{
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
 }
 
-img{
-  max-width: 100%;
-  display: block;
-}
-
-a{
-  color: inherit;
-  text-decoration: none;
-}
-
-p{
-  margin: 0;
-  color: var(--text-soft);
-  line-height: 1.6;
-}
+img{ max-width: 100%; display: block; }
+a{ color: inherit; text-decoration: none; }
+p{ margin: 0; color: var(--text-soft); line-height: 1.6; }
 
 /* -----------------------------
-   LAYOUT UTILITIES
+   Common layout
 ------------------------------ */
-.container{
-  width: min(var(--max-width), 92%);
-  margin: 0 auto;
-  padding: 28px 0;
-}
-
 .section{
   width: min(var(--max-width), 92%);
   margin: 18px auto;
@@ -84,11 +52,30 @@ p{
   padding: 22px;
 }
 
+/* Cards */
+.card{
+  background: linear-gradient(180deg, var(--surface-2), var(--surface));
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.06);
+  padding: 14px;
+}
+
+.pill{
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--text);
+  background: rgba(155,109,109,0.10);
+  border: 1px solid rgba(155,109,109,0.18);
+}
+
 /* -----------------------------
-   GLOBAL NAVBAR (for ALL pages)
+   Global header/nav for all pages
 ------------------------------ */
-header,
-.navbar,
 .site-header{
   width: 100%;
   background: rgba(243,222,222,0.55);
@@ -106,102 +93,100 @@ header,
   padding: 14px 0;
 }
 
-.nav-left{
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.brand-logo{
-  width: 120px;
-  height: auto;
-}
-
 .nav-links{
   display: flex;
   gap: 18px;
   flex-wrap: wrap;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 650;
 }
 
-.nav-links a{
-  opacity: 0.78;
-}
+.nav-links a{ opacity: 0.78; }
+.nav-links a.active, .nav-links a:hover{ opacity: 1; }
 
-.nav-links a:hover,
-.nav-links a.active{
-  opacity: 1;
-}
-
-/* Global CTA Button */
-.btn,
-button,
-input[type="submit"],
-a.button,
 .nav-cta{
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
   padding: 10px 18px;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--btn-2), var(--btn));
+  font-weight: 800;
+  font-size: 13px;
   color: #2b1e1e;
+  background: linear-gradient(135deg, var(--btn-2), var(--btn));
   border: 1px solid rgba(255,255,255,0.35);
   box-shadow: 0 8px 22px rgba(155,109,109,0.20);
-  font-weight: 750;
-  font-size: 13px;
-  cursor: pointer;
   transition: transform 0.2s ease;
 }
+.nav-cta:hover{ transform: translateY(-1px); }
 
-.btn:hover,
-button:hover,
-a.button:hover,
-.nav-cta:hover{
-  transform: translateY(-1px);
-}
-
-/* secondary btn */
-.btn.secondary{
-  background: rgba(155,109,109,0.10);
-  box-shadow: none;
-  border: 1px solid rgba(155,109,109,0.25);
+/* mini logo in nav (prevents huge logo) */
+.brand-mini img{
+  width: 110px;
+  height: auto;
 }
 
 /* -----------------------------
-   GLOBAL CARDS
+   NON-HOME PAGES: small top banner
 ------------------------------ */
-.card,
-.feature-card,
-.service-card,
-.media-card,
-.event-card{
-  background: linear-gradient(180deg, var(--surface-2), var(--surface));
+.page-hero{
+  width: min(var(--max-width), 92%);
+  margin: 18px auto 0;
+  padding: 18px;
+  border-radius: var(--radius-xl);
+  background: rgba(243,222,222,0.45);
   border: 1px solid rgba(255,255,255,0.35);
-  border-radius: var(--radius-md);
-  box-shadow: 0 10px 22px rgba(0,0,0,0.06);
-  padding: 14px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.06);
 }
 
-/* Pill labels */
-.pill{
-  display: inline-flex;
+.page-hero-inner{
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 18px;
   align-items: center;
-  gap: 8px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 800;
+}
+
+.page-hero-brand{
+  background: rgba(255,255,255,0.28);
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 16px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-hero-brand img{
+  width: 180px;   /* key: keeps logo small */
+  height: auto;
+  object-fit: contain;
+}
+
+.page-hero-text h1{
+  margin: 0 0 6px;
+  font-size: 26px;
+  font-weight: 900;
   color: var(--text);
-  background: rgba(155,109,109,0.10);
-  border: 1px solid rgba(155,109,109,0.18);
+}
+
+.page-hero-text p{
+  margin: 0;
+  font-size: 13px;
 }
 
 /* -----------------------------
-   HOME PAGE (Screenshot Layout)
+   HOME PAGE ONLY
+   (your big screenshot layout stays ONLY on home)
 ------------------------------ */
+body.home .site-header,
+body.home .page-hero{
+  display: none; /* home uses the hero-card nav instead */
+}
+
+.home-wrap{
+  width: 100%;
+}
+
 .home-mock{
   width: min(var(--max-width), 92%);
   margin: 34px auto 18px;
@@ -212,7 +197,6 @@ a.button:hover,
   border: 1px solid rgba(255,255,255,0.25);
 }
 
-/* top nav inside card */
 .mock-navbar{
   display: flex;
   align-items: center;
@@ -230,14 +214,8 @@ a.button:hover,
   font-weight: 650;
 }
 
-.mock-links a{
-  opacity: 0.78;
-}
-
-.mock-links a.active,
-.mock-links a:hover{
-  opacity: 1;
-}
+.mock-links a{ opacity: 0.78; }
+.mock-links a.active, .mock-links a:hover{ opacity: 1; }
 
 .mock-book-btn{
   display: inline-flex;
@@ -253,7 +231,7 @@ a.button:hover,
   box-shadow: 0 8px 22px rgba(155,109,109,0.20);
 }
 
-/* Hero Image + overlay logo */
+/* home hero frame */
 .mock-hero-image{
   position: relative;
   margin-top: 18px;
@@ -262,62 +240,6 @@ a.button:hover,
   border: 10px solid rgba(255,255,255,0.22);
   box-shadow: 0 18px 40px rgba(0,0,0,0.12);
 }
-
-/* ===== HERO: Logo fills area + reddish frame (no center photo) ===== */
-.mock-hero-image.hero-frame{
-  position: relative;
-  border-radius: 18px;
-  overflow: hidden;
-  border: 10px solid rgba(255,255,255,0.22);
-}
-
-/* Hide the photo entirely (used only if you later switch to Option B) */
-.mock-hero-image.hero-frame .mock-hero-photo{
-  display: none;
-}
-
-/* Reddish frame background */
-.mock-hero-image.hero-frame{
-  background:
-    linear-gradient(180deg, rgba(155,109,109,0.35), rgba(155,109,109,0.15)),
-    radial-gradient(800px 320px at 20% 0%, rgba(255,255,255,0.25), rgba(255,255,255,0));
-}
-
-/* Add an inner border like the screenshot */
-.mock-hero-image.hero-frame::after{
-  content:"";
-  position:absolute;
-  inset: 14px;
-  border-radius: 14px;
-  border: 2px solid rgba(255,255,255,0.22);
-  pointer-events:none;
-}
-
-/* Logo fills the available space */
-.mock-hero-image.hero-frame .mock-hero-overlay{
-  position:absolute;
-  inset: 0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding: 18px; /* controls margin to frame */
-  pointer-events:none;
-}
-
-.mock-hero-image.hero-frame .mock-hero-logo{
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  max-height: none;
-  object-fit: contain;
-  padding: 0;
-  border-radius: 14px;
-  background: transparent;   /* important: remove the glass tile */
-  box-shadow: none;          /* cleaner */
-  border: none;
-}
-
-
 .mock-hero-image::after{
   content:"";
   position:absolute;
@@ -326,7 +248,6 @@ a.button:hover,
   border: 2px solid rgba(255,255,255,0.25);
   pointer-events:none;
 }
-
 .mock-hero-photo{
   width: 100%;
   height: 340px;
@@ -335,28 +256,41 @@ a.button:hover,
   filter: saturate(1.05) contrast(1.02);
 }
 
+/* frame-only photo + logo center */
+.mock-hero-image.hero-frame .mock-hero-photo{
+  transform: scale(1.08);
+  filter: saturate(1.1) contrast(1.05) blur(2px);
+}
+.mock-hero-image.hero-frame::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(90deg,
+    rgba(155,109,109,0.45),
+    rgba(155,109,109,0.20),
+    rgba(155,109,109,0.45)
+  );
+  pointer-events:none;
+}
 .mock-hero-overlay{
   position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 18px;
-  pointer-events: none;
+  inset: 16px;
+  padding: 10px;
+  border-radius: 14px;
+  background: rgba(243,222,222,0.92);
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.22);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
 }
-
 .mock-hero-logo{
-  width: min(520px, 84%);
-  height: auto;
-  padding: 16px 18px;
-  border-radius: 18px;
-  background: rgba(243,222,222,0.65);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 16px 35px rgba(0,0,0,0.18);
-  border: 1px solid rgba(255,255,255,0.35);
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-/* Hero text */
+/* home hero text */
 .mock-hero-text{
   display: flex;
   justify-content: space-between;
@@ -365,16 +299,13 @@ a.button:hover,
   margin-top: 18px;
   padding: 10px 6px;
 }
-
 .mock-left{ flex: 1; }
 .mock-right{ flex: 0.9; max-width: 420px; }
-
 .mock-welcome{
   font-size: 13px;
   margin-bottom: 10px;
   color: rgba(59,47,47,0.65);
 }
-
 .mock-brand{
   margin: 0 0 8px;
   font-size: 52px;
@@ -384,84 +315,48 @@ a.button:hover,
   font-weight: 900;
   font-family: ui-serif, Georgia, "Times New Roman", serif;
 }
-
-.mock-brand span{
-  color: var(--mauve);
-}
-
+.mock-brand span{ color: var(--mauve); }
 .mock-tagline{
   margin: 0;
   font-size: 18px;
   font-weight: 700;
   color: rgba(59,47,47,0.72);
 }
-
-/* WHAT YOU GET */
-.what-you-get{
-  margin-top: 26px;
-  padding: 10px 6px 0;
-}
-
-.section-title{
-  margin: 0 0 6px;
-  font-size: 22px;
-  font-weight: 900;
-  color: var(--text);
-}
-
-.section-subtitle{
-  margin: 0 0 18px;
-  color: var(--text-soft);
+.mock-desc{
   font-size: 13px;
 }
 
+/* home features */
+.what-you-get{ margin-top: 26px; padding: 10px 6px 0; }
+.section-title{ margin:0 0 6px; font-size:22px; font-weight:900; }
+.section-subtitle{ margin:0 0 18px; font-size:13px; }
 .feature-grid{
-  display: grid;
+  display:grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
+.feature-card h4{ margin:10px 0 6px; font-size:15px; font-weight:900; }
+.feature-card p{ font-size:13px; }
 
-.feature-card h4{
-  margin: 10px 0 6px;
-  font-size: 15px;
-  font-weight: 900;
-  color: var(--text);
-}
-
-.feature-card p{
-  font-size: 13px;
-}
-
-/* stats row */
 .stats-row{
-  display: flex;
-  gap: 14px;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 18px;
+  display:flex;
+  gap:14px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-top:18px;
 }
-
 .stat{
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  display:flex;
+  gap:10px;
+  align-items:center;
   background: rgba(243,222,222,0.7);
   border: 1px solid rgba(255,255,255,0.35);
   border-radius: 16px;
   padding: 12px 14px;
   box-shadow: 0 10px 22px rgba(0,0,0,0.06);
 }
-
-.stat-num{
-  font-weight: 900;
-  color: var(--text);
-}
-
-.stat-text{
-  font-size: 12px;
-  color: var(--text-soft);
-}
-
+.stat-num{ font-weight:900; }
+.stat-text{ font-size:12px; }
 .stat-pill{
   padding: 10px 14px;
   border-radius: 999px;
@@ -469,37 +364,9 @@ a.button:hover,
   font-weight: 900;
   background: rgba(155,109,109,0.12);
   border: 1px solid rgba(155,109,109,0.20);
-  color: var(--text);
 }
 
-/* -----------------------------
-   FORMS (booking/contact pages)
------------------------------- */
-input, textarea, select{
-  width: 100%;
-  padding: 12px 14px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(243,222,222,0.65);
-  outline: none;
-  color: var(--text);
-}
-
-input::placeholder,
-textarea::placeholder{
-  color: rgba(59,47,47,0.55);
-}
-
-input:focus,
-textarea:focus,
-select:focus{
-  border-color: rgba(155,109,109,0.55);
-  box-shadow: 0 0 0 4px rgba(155,109,109,0.15);
-}
-
-/* -----------------------------
-   FOOTER
------------------------------- */
+/* footer */
 footer{
   width: min(var(--max-width), 92%);
   margin: 20px auto 40px;
@@ -508,39 +375,58 @@ footer{
   text-align: center;
 }
 
-/* -----------------------------
-   RESPONSIVE
------------------------------- */
+/* Responsive */
 @media (max-width: 900px){
+  .page-hero-inner{
+    grid-template-columns: 1fr;
+  }
+  .page-hero-brand img{
+    width: 160px;
+  }
   .mock-hero-text{
     flex-direction: column;
     align-items: flex-start;
   }
-
   .feature-grid{
     grid-template-columns: 1fr;
   }
+  .mock-brand{ font-size: 40px; }
+  .mock-hero-photo{ height: 260px; }
+}
+/* Booking form helpers */
+.form-fieldset{
+  border: 1px solid rgba(155,109,109,0.25);
+  border-radius: 16px;
+  padding: 14px;
+  margin-top: 14px;
+  background: rgba(243,222,222,0.35);
+}
 
-  .mock-brand{
-    font-size: 40px;
-  }
+.form-legend{
+  padding: 0 10px;
+  font-weight: 900;
+  color: var(--text);
+}
 
-  .mock-hero-photo{
-    height: 260px;
-  }
+.form-grid-2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 14px;
+  margin-top: 10px;
+}
 
-  .mock-hero-logo{
-    width: min(420px, 90%);
+.form-row label{
+  display:block;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+textarea{
+  resize: vertical;
+}
+
+@media (max-width: 900px){
+  .form-grid-2{
+    grid-template-columns: 1fr;
   }
 }
-@media (max-width: 600px){
-  .nav-wrap{
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .mock-hero-photo{
-    height: 200px;
-  }
-} 

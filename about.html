@@ -3,90 +3,93 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About | Asmi Pokharel</title>
+  <title>About | Asmi on mic</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-  <!-- Header (same as index) -->
-  <header class="header">
-    <div class="container">
-      <nav class="nav">
-        <a class="brand" href="index.html">
-          <img src="assets/img/logo.png" alt="Logo">
-          <div>
-            <div>Asmi Pokharel</div>
-            <small>Emcee • Event Host • Speaker</small>
-          </div>
-        </a>
-        <button class="menu-btn" data-menu-btn aria-label="Open menu">Menu</button>
-        <div class="navlinks" data-navlinks>
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="media.html">Media</a>
-          <a href="booking.html">Book</a>
-          <a href="events.html">Events</a>
-        </div>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="nav-wrap">
+      <!-- <a href="index.html" class="brand-mini">
+        <img src="assets/img/logo.png" alt="Asmi on mic logo">
+      </a> -->
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="media.html">Media</a>
+        <a href="booking.html">Booking</a>
+        <a href="events.html">Events</a>
       </nav>
+
+      <a class="nav-cta" href="booking.html">Book Now</a>
     </div>
   </header>
 
-  <section class="section">
-    <div class="container">
-      <h2>About</h2>
-      <p class="lead">
-        Write a strong, human intro here: who she is, what she’s known for, and why people enjoy her style.
-      </p>
+  <!-- Page Banner -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-hero-brand">
+        <img src="assets/img/logo.png" alt="Asmi on mic logo">
+      </div>
 
-      <div class="split">
-        <div class="card" style="padding:18px;">
-          <img src="assets/img/headshot.jpg" alt="Headshot" style="border-radius:16px; border:1px solid rgba(0,0,0,.08);">
-        </div>
-        <div class="card" style="padding:18px;">
-          <h3 style="margin-top:0;">My story</h3>
-          <p style="color: var(--muted);">
-            Placeholder text: Background, public speaking journey, communities served, and values.
-            Mention community work and the kind of environments she loves hosting.
-          </p>
-
-          <div class="grid-3" style="grid-template-columns: 1fr; margin-top: 14px;">
-            <div class="card" style="padding:14px;">
-              <strong>Signature style</strong>
-              <div style="color: var(--muted);">Warm, polished, engaging, and on-time.</div>
-            </div>
-            <div class="card" style="padding:14px;">
-              <strong>Community work</strong>
-              <div style="color: var(--muted);">Short description of involvement and impact.</div>
-            </div>
-            <div class="card" style="padding:14px;">
-              <strong>Available for</strong>
-              <div style="color: var(--muted);">Conferences, panels, corporate, community, celebrations.</div>
-            </div>
-          </div>
-
-          <div style="margin-top:16px;">
-            <a class="btn primary" href="booking.html">Book an Inquiry</a>
-            <a class="btn" href="services.html">View Services</a>
-          </div>
-        </div>
+      <div class="page-hero-text">
+        <h1>About</h1>
+        <p>Who she is, her style, and why people love having her on stage.</p>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="foot">
-        <div>© <span id="year"></span> Asmi Pokharel. All rights reserved.</div>
-        <div class="social">
-          <a href="#" aria-label="Instagram">Instagram</a>
-          <a href="#" aria-label="YouTube">YouTube</a>
-          <a href="#" aria-label="LinkedIn">LinkedIn</a>
+  <!-- Content -->
+  <main class="section">
+    <h2 style="margin-top:0;">About</h2>
+    <p style="margin-top:8px;">
+      Write a strong, human intro here: who she is, what she’s known for, and why people enjoy her style.
+    </p>
+
+    <div style="display:grid; grid-template-columns: 320px 1fr; gap:18px; margin-top:18px;">
+      <div class="card">
+        <img src="assets/img/headshot.jpg" alt="Headshot"
+             style="border-radius:16px; border:1px solid rgba(255,255,255,0.35);">
+      </div>
+
+      <div class="card">
+        <h3 style="margin-top:0;">My story</h3>
+        <p>
+          Placeholder text: Background, public speaking journey, communities served, and values.
+          Mention community work and the kind of environments she loves hosting.
+        </p>
+
+        <div style="display:grid; grid-template-columns: 1fr; gap:12px; margin-top:14px;">
+          <div class="card">
+            <strong>Signature style</strong>
+            <div style="margin-top:6px;">Warm, polished, engaging, and on-time.</div>
+          </div>
+
+          <div class="card">
+            <strong>Community work</strong>
+            <div style="margin-top:6px;">Short description of involvement and impact.</div>
+          </div>
+
+          <div class="card">
+            <strong>Available for</strong>
+            <div style="margin-top:6px;">Conferences, panels, corporate, community, celebrations.</div>
+          </div>
+        </div>
+
+        <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="nav-cta" href="booking.html">Book an Inquiry</a>
+          <a class="nav-cta" style="background: rgba(155,109,109,0.12); box-shadow:none;"
+             href="services.html">View Services</a>
         </div>
       </div>
     </div>
-  </footer>
+  </main>
 
+  <footer>© <span id="year"></span> Asmi on mic</footer>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-  <script src="assets/js/main.js"></script>
+
 </body>
 </html>

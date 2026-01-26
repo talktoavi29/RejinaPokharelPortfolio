@@ -3,191 +3,231 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Booking | Asmi Pokharel</title>
+  <title>Booking | Asmi on mic</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <nav class="nav">
-        <a class="brand" href="index.html">
-          <img src="assets/img/logo.png" alt="Logo">
-          <div>
-            <div>Asmi Pokharel</div>
-            <small>Emcee • Event Host • Speaker</small>
-          </div>
-        </a>
-        <button class="menu-btn" data-menu-btn aria-label="Open menu">Menu</button>
-        <div class="navlinks" data-navlinks>
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="media.html">Media</a>
-          <a href="booking.html">Book</a>
-          <a href="events.html">Events</a>
-        </div>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="nav-wrap">
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="media.html">Media</a>
+        <a class="active" href="booking.html">Booking</a>
+        <a href="events.html">Events</a>
       </nav>
+
+      <a class="nav-cta" href="booking.html">Book Now</a>
     </div>
   </header>
 
-  <section class="section">
-    <div class="container">
-      <h2>Booking Inquiry</h2>
-      <p class="lead">
-        Share a few details and I’ll respond with availability and next steps.
-      </p>
+  <!-- Page Banner -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-hero-brand">
+        <img src="assets/img/logo.png" alt="Asmi on mic logo">
+      </div>
 
-      <div class="card form">
-        <!-- Replace ACTION with Formspree endpoint (recommended for GitHub Pages) -->
-        <form action="https://formspree.io/f/REPLACE_ME" method="POST">
-          <fieldset>
-            <legend>💎 Your Information</legend>
-
-            <div class="row">
-              <div>
-                <label for="reachedOn">Reached on</label>
-                <input id="reachedOn" name="Reached on" placeholder="Instagram, Google, Referral..." />
-              </div>
-              <div>
-                <label for="bestWay">Best way to reach you</label>
-                <select id="bestWay" name="Best Way to Reach You" required>
-                  <option value="">Select…</option>
-                  <option>Email</option>
-                  <option>Phone</option>
-                  <option>Text</option>
-                  <option>Instagram DM</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="row">
-              <div>
-                <label for="fullName">Full name</label>
-                <input id="fullName" name="Full Name" required />
-              </div>
-              <div>
-                <label for="email">Email address</label>
-                <input id="email" name="Email Address" type="email" required />
-              </div>
-            </div>
-
-            <div class="row">
-              <div>
-                <label for="phone">Phone number</label>
-                <input id="phone" name="Phone Number" type="tel" />
-              </div>
-              <div>
-                <label for="contactWindow">Preferred contact time</label>
-                <input id="contactWindow" name="Preferred Contact Time" placeholder="e.g., evenings after 6pm" />
-              </div>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend>🗓️ Event Details</legend>
-
-            <div class="row">
-              <div>
-                <label for="eventType">Type of event</label>
-                <select id="eventType" name="Type of Event" required>
-                  <option value="">Select…</option>
-                  <option>Wedding</option>
-                  <option>Birthday Celebration</option>
-                  <option>Corporate Event</option>
-                  <option>School Event</option>
-                  <option>Community Event</option>
-                  <option>Conference</option>
-                  <option>Panel</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div>
-                <label for="guestCount">Estimated guest count</label>
-                <input id="guestCount" name="Estimated Guest Count" placeholder="e.g., 120" />
-              </div>
-            </div>
-
-            <div class="row">
-              <div>
-                <label for="eventDate">Event date</label>
-                <input id="eventDate" name="Event Date" type="date" required />
-              </div>
-              <div>
-                <label for="eventTime">Event time (start–end)</label>
-                <input id="eventTime" name="Event Time (Start–End)" placeholder="e.g., 6:00pm – 10:00pm" />
-              </div>
-            </div>
-
-            <label for="location">Event location (venue + city/state)</label>
-            <input id="location" name="Event Location (Venue + City/State)" placeholder="Venue name, City, State" />
-          </fieldset>
-
-          <fieldset>
-            <legend>🎤 Hosting Experience</legend>
-
-            <label for="experience">What kind of emcee experience are you looking for?</label>
-            <input id="experience" name="Emcee Experience Requested"
-              placeholder="High-energy hosting, elegant announcements, crowd engagement, games, intros, timeline coordination..." />
-
-            <div class="row">
-              <div>
-                <label for="vibe">Overall event vibe</label>
-                <select id="vibe" name="Overall Event Vibe">
-                  <option value="">Select…</option>
-                  <option>Luxury & Elegant</option>
-                  <option>Fun & Lively</option>
-                  <option>Chic & Modern</option>
-                  <option>Relaxed & Casual</option>
-                </select>
-              </div>
-              <div>
-                <label for="dj">Will there be a DJ or live entertainment?</label>
-                <select id="dj" name="DJ or Live Entertainment">
-                  <option value="">Select…</option>
-                  <option>Yes</option>
-                  <option>No</option>
-                  <option>Still deciding</option>
-                </select>
-              </div>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend>✨ Vision</legend>
-
-            <label for="aboutEvent">Tell me about your event</label>
-            <textarea id="aboutEvent" name="Tell Me About Your Event"
-              placeholder="Theme, audience, special moments, must-have announcements, cultural elements, what you want guests to remember..."></textarea>
-
-            <label for="specialRequests">Any special requests or surprises?</label>
-            <textarea id="specialRequests" name="Any Special Requests or Surprises"></textarea>
-          </fieldset>
-
-          <!-- Formspree needs an email field; already included. -->
-          <button class="btn primary" type="submit">Submit inquiry</button>
-          <div class="helper">
-            Tip: For GitHub Pages, use Formspree (replace the form action URL). Or change this to a Google Form link.
-          </div>
-        </form>
+      <div class="page-hero-text">
+        <h1>Booking Inquiry</h1>
+        <p>Share a few details and I’ll respond with availability and next steps.</p>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="foot">
-        <div>© <span id="year"></span> Asmi Pokharel. All rights reserved.</div>
-        <div class="social">
-          <a href="#" aria-label="Instagram">Instagram</a>
-          <a href="#" aria-label="YouTube">YouTube</a>
-          <a href="#" aria-label="LinkedIn">LinkedIn</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <!-- Content -->
+  <main class="section">
+    <h2 style="margin-top:0;">Booking Inquiry</h2>
+    <p style="margin-top:8px;">Share a few details and I’ll respond with availability and next steps.</p>
 
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-  <script src="assets/js/main.js"></script>
+    <!-- success message after redirect -->
+    <div id="successMsg" class="card" style="display:none; margin-top:16px;">
+      <strong>Thank you!</strong>
+      <p style="margin-top:6px;">Your inquiry was submitted. I’ll get back to you soon.</p>
+    </div>
+
+    <!-- FULL FORM -->
+    <form
+      action="https://formspree.io/f/mjgwgkgl"
+      method="POST"
+      class="card"
+      style="margin-top:16px;"
+    >
+      <!-- Optional subject -->
+      <input type="hidden" name="_subject" value="New Booking Inquiry - Asmi on mic">
+
+      <!-- Redirect after submit -->
+      <input type="hidden" name="_next" value="https://asmionmic.com/booking.html?success=1">
+
+      <!-- ========= Your Information ========= -->
+      <fieldset class="form-fieldset" style="margin-top:0;">
+        <legend class="form-legend">💎 Your Information</legend>
+
+        <div class="form-grid-2">
+          <div class="form-row">
+            <label for="heardFrom"><strong>Reached on</strong></label>
+            <input id="heardFrom" name="heardFrom" type="text" placeholder="Instagram, Google, Referral..." />
+          </div>
+
+          <div class="form-row">
+            <label for="bestContact"><strong>Best way to reach you</strong></label>
+            <select id="bestContact" name="bestContact">
+              <option value="">Select...</option>
+              <option>Email</option>
+              <option>Phone call</option>
+              <option>Text message</option>
+              <option>WhatsApp</option>
+              <option>Instagram DM</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="fullName"><strong>Full name</strong></label>
+            <input id="fullName" name="fullName" type="text" required />
+          </div>
+
+          <div class="form-row">
+            <label for="email"><strong>Email address</strong></label>
+            <input id="email" name="email" type="email" required />
+          </div>
+
+          <div class="form-row">
+            <label for="phone"><strong>Phone number</strong></label>
+            <input id="phone" name="phone" type="tel" />
+          </div>
+
+          <div class="form-row">
+            <label for="preferredContactTime"><strong>Preferred contact time</strong></label>
+            <input id="preferredContactTime" name="preferredContactTime" type="text" placeholder="e.g., evenings after 6pm" />
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- ========= Event Details ========= -->
+      <fieldset class="form-fieldset">
+        <legend class="form-legend">🎟️ Event Details</legend>
+
+        <div class="form-grid-2">
+          <div class="form-row">
+            <label for="eventType"><strong>Type of event</strong></label>
+            <select id="eventType" name="eventType">
+              <option value="">Select...</option>
+              <option>Conference / Summit</option>
+              <option>Panel / Discussion</option>
+              <option>Corporate Event</option>
+              <option>Community Event</option>
+              <option>Wedding</option>
+              <option>Reception / Celebration</option>
+              <option>Fundraiser / Gala</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="guestCount"><strong>Estimated guest count</strong></label>
+            <input id="guestCount" name="guestCount" type="number" min="0" placeholder="e.g., 120" />
+          </div>
+
+          <div class="form-row">
+            <label for="eventDate"><strong>Event date</strong></label>
+            <input id="eventDate" name="eventDate" type="date" />
+          </div>
+
+          <div class="form-row">
+            <label for="eventTime"><strong>Event time (start–end)</strong></label>
+            <input id="eventTime" name="eventTime" type="text" placeholder="e.g., 6:00pm – 10:00pm" />
+          </div>
+
+          <div class="form-row" style="grid-column: 1 / -1;">
+            <label for="eventLocation"><strong>Event location (venue + city/state)</strong></label>
+            <input id="eventLocation" name="eventLocation" type="text" placeholder="Venue name, City, State" />
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- ========= Hosting Experience ========= -->
+      <fieldset class="form-fieldset">
+        <legend class="form-legend">🎤 Hosting Experience</legend>
+
+        <div class="form-grid-2">
+          <div class="form-row" style="grid-column: 1 / -1;">
+            <label for="hostingStyle"><strong>What kind of emcee experience are you looking for?</strong></label>
+            <input id="hostingStyle" name="hostingStyle" type="text" placeholder="High-energy hosting, elegant..." />
+          </div>
+
+          <div class="form-row">
+            <label for="eventVibe"><strong>Overall event vibe</strong></label>
+            <select id="eventVibe" name="eventVibe">
+              <option value="">Select...</option>
+              <option>Formal & Elegant</option>
+              <option>Professional & Polished</option>
+              <option>Fun & Playful</option>
+              <option>Cultural & Traditional</option>
+              <option>High Energy</option>
+              <option>Mix of everything</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="djLive"><strong>Will there be a DJ or live entertainment?</strong></label>
+            <select id="djLive" name="djLive">
+              <option value="">Select...</option>
+              <option>Yes - DJ</option>
+              <option>Yes - Live band</option>
+              <option>Yes - Both</option>
+              <option>No</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- ========= Vision ========= -->
+      <fieldset class="form-fieldset">
+        <legend class="form-legend">✨ Vision</legend>
+
+        <div class="form-grid-2">
+          <div class="form-row">
+            <label for="eventStory"><strong>Tell me about your event</strong></label>
+            <textarea id="eventStory" name="eventStory" rows="6"
+              placeholder="Theme, audience, special moments, timeline notes..."></textarea>
+          </div>
+
+          <div class="form-row">
+            <label for="specialRequests"><strong>Any special requests or surprises?</strong></label>
+            <textarea id="specialRequests" name="specialRequests" rows="6"
+              placeholder="Special announcements, surprises, cultural notes, must-dos..."></textarea>
+          </div>
+        </div>
+      </fieldset>
+
+      <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+        <button type="submit" class="nav-cta">Submit inquiry</button>
+        <button type="reset" class="nav-cta" style="background: rgba(155,109,109,0.12); box-shadow:none;">
+          Reset
+        </button>
+      </div>
+
+      <p style="margin-top:10px; font-size:12px;">
+        Note: After the first live submission, Formspree may ask you to confirm/activate the form once.
+      </p>
+    </form>
+  </main>
+
+  <footer>© <span id="year"></span> Asmi on mic</footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // show success box after redirect
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("success") === "1") {
+      document.getElementById("successMsg").style.display = "block";
+    }
+  </script>
+
 </body>
 </html>
