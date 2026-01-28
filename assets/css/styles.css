@@ -1,6 +1,6 @@
 /* ==========================================
    Asmi on mic — Matte Rose & Dusty Mauve Theme
-   Full replacement styles.css
+   Full replacement styles.css (UPDATED: no hero background image)
 ========================================== */
 
 :root{
@@ -157,7 +157,7 @@ p{ margin: 0; color: var(--text-soft); line-height: 1.6; }
 }
 
 .page-hero-brand img{
-  width: 180px;   /* key: keeps logo small */
+  width: 180px;
   height: auto;
   object-fit: contain;
 }
@@ -176,11 +176,10 @@ p{ margin: 0; color: var(--text-soft); line-height: 1.6; }
 
 /* -----------------------------
    HOME PAGE ONLY
-   (your big screenshot layout stays ONLY on home)
 ------------------------------ */
 body.home .site-header,
 body.home .page-hero{
-  display: none; /* home uses the hero-card nav instead */
+  display: none;
 }
 
 .home-wrap{
@@ -218,118 +217,105 @@ body.home .page-hero{
 .mock-links a.active, .mock-links a:hover{ opacity: 1; }
 
 .mock-book-btn{
-  display: inline-flex;
+  /* display: inline-flex; */
   align-items: center;
   justify-content: center;
   padding: 10px 18px;
   border-radius: 999px;
   font-weight: 800;
   font-size: 13px;
-  color: #2b1e1e;
-  background: linear-gradient(135deg, var(--btn-2), var(--btn));
+  /* color: #2b1e1e; */
+  color: #181103;
+  /* background: linear-gradient(135deg, var(--btn-2), var(--btn)); */
+  background-color: #aa7905;
   border: 1px solid rgba(255,255,255,0.35);
-  box-shadow: 0 8px 22px rgba(155,109,109,0.20);
+  /* box-shadow: 0 8px 22px rgba(155,109,109,0.20); */
 }
 
-/* home hero frame */
+/* ==============================
+   HOME HERO — BANNER LOGO STYLE
+   Matches reference image exactly
+============================== */
+
 .mock-hero-image{
   position: relative;
   margin-top: 18px;
-  border-radius: var(--radius-lg);
+  height: 320px;          /* INCREASED from 260 */
+  border-radius: 18px;
   overflow: hidden;
-  border: 10px solid rgba(255,255,255,0.22);
+  border: 10px solid rgba(255,255,255,0.35);
   box-shadow: 0 18px 40px rgba(0,0,0,0.12);
 }
+
+/* Inner frame */
 .mock-hero-image::after{
   content:"";
   position:absolute;
-  inset: 12px;
+  inset: 10px;
   border-radius: 14px;
-  border: 2px solid rgba(255,255,255,0.25);
+  border: 2px solid rgba(255,255,255,0.55);
   pointer-events:none;
 }
-.mock-hero-photo{
+
+/* Logo acts as a wide hero banner */
+.mock-hero-banner{
   width: 100%;
-  height: 340px;
-  object-fit: cover;
+  height: 110%;
+  object-fit: cover;                 /* THIS is the key */
+  object-position: center;
   display: block;
-  filter: saturate(1.05) contrast(1.02);
 }
 
-/* frame-only photo + logo center */
-.mock-hero-image.hero-frame .mock-hero-photo{
-  transform: scale(1.08);
-  filter: saturate(1.1) contrast(1.05) blur(2px);
-}
-.mock-hero-image.hero-frame::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: linear-gradient(90deg,
-    rgba(155,109,109,0.45),
-    rgba(155,109,109,0.20),
-    rgba(155,109,109,0.45)
-  );
-  pointer-events:none;
-}
-.mock-hero-overlay{
-  position: absolute;
-  inset: 16px;
-  padding: 10px;
-  border-radius: 14px;
-  background: rgba(243,222,222,0.92);
-  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.22);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  pointer-events:none;
-}
-.mock-hero-logo{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+@media (max-width: 900px){
+  .mock-hero-image{
+    height: 200px;
+  }
 }
 
-/* home hero text */
-.mock-hero-text{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 32px;
-  margin-top: 18px;
-  padding: 10px 6px;
-}
+
 .mock-left{ flex: 1; }
-.mock-right{ flex: 0.9; max-width: 420px; }
+.mock-right{ flex: 0.9; 
+  /* max-width: 420px;  */
+  padding-top: 15px;
+}
+
 .mock-welcome{
   font-size: 13px;
   margin-bottom: 10px;
   color: rgba(59,47,47,0.65);
 }
+
 .mock-brand{
   margin: 0 0 8px;
   font-size: 52px;
-  line-height: 1;
-  letter-spacing: 0.2px;
-  color: var(--text);
-  font-weight: 900;
-  font-family: ui-serif, Georgia, "Times New Roman", serif;
+  line-height: 1.05;
+  letter-spacing: 0.3px;
+  color: #ab5852;
+  font-weight: 800;
+  font-family: "Playfair Display", Georgia, serif;
+  padding-top: 3%;
 }
-.mock-brand span{ color: var(--mauve); }
+
+/* .mock-brand span{ color: var(--mauve); } */
+
 .mock-tagline{
   margin: 0;
   font-size: 18px;
   font-weight: 700;
-  color: rgba(59,47,47,0.72);
+  color: #906b12
 }
+
 .mock-desc{
-  font-size: 13px;
+  font-size: 18px;
+  color: #2b1e1e;
+  width: 100%;
 }
 
 /* home features */
 .what-you-get{ margin-top: 26px; padding: 10px 6px 0; }
 .section-title{ margin:0 0 6px; font-size:22px; font-weight:900; }
 .section-subtitle{ margin:0 0 18px; font-size:13px; }
+
 .feature-grid{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
@@ -375,25 +361,9 @@ footer{
   text-align: center;
 }
 
-/* Responsive */
-@media (max-width: 900px){
-  .page-hero-inner{
-    grid-template-columns: 1fr;
-  }
-  .page-hero-brand img{
-    width: 160px;
-  }
-  .mock-hero-text{
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .feature-grid{
-    grid-template-columns: 1fr;
-  }
-  .mock-brand{ font-size: 40px; }
-  .mock-hero-photo{ height: 260px; }
-}
-/* Booking form helpers */
+/* -----------------------------
+   Booking form helpers
+------------------------------ */
 .form-fieldset{
   border: 1px solid rgba(155,109,109,0.25);
   border-radius: 16px;
@@ -425,8 +395,46 @@ textarea{
   resize: vertical;
 }
 
+/* Basic input styling (helps look consistent) */
+input, select, textarea{
+  width: 100%;
+  padding: 10px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(155,109,109,0.25);
+  background: rgba(255,255,255,0.55);
+  color: var(--text);
+  outline: none;
+}
+
+input:focus, select:focus, textarea:focus{
+  border-color: rgba(155,109,109,0.45);
+  box-shadow: 0 0 0 3px rgba(155,109,109,0.12);
+}
+
+/* Responsive */
 @media (max-width: 900px){
+  .page-hero-inner{
+    grid-template-columns: 1fr;
+  }
+  .page-hero-brand img{
+    width: 160px;
+  }
+  .mock-hero-text{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .feature-grid{
+    grid-template-columns: 1fr;
+  }
+  .mock-brand{ font-size: 40px; }
   .form-grid-2{
     grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 900px){
+  .mock-hero-overlay{
+    width: 300px;
+    top: -20px;
+    bottom: -20px;
   }
 }
