@@ -97,8 +97,8 @@ p{ margin: 0; color: var(--text-soft); line-height: 1.6; }
   display: flex;
   gap: 18px;
   flex-wrap: wrap;
-  font-size: 13px;
-  font-weight: 650;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .nav-links a{ opacity: 0.78; }
@@ -209,8 +209,8 @@ body.home .page-hero{
   display: flex;
   gap: 18px;
   flex-wrap: wrap;
-  font-size: 13px;
-  font-weight: 650;
+  font-size: 18px;
+  font-weight: 800;
 }
 
 .mock-links a{ opacity: 0.78; }
@@ -363,8 +363,10 @@ body.home .page-hero{
   display:flex;
   gap:14px;
   align-items:center;
-  flex-wrap:wrap;
+  flex-wrap: nowrap;
   margin-top:18px;
+  justify-content: flex-start;
+  overflow: auto;
 }
 .stat{
   display:flex;
@@ -385,6 +387,8 @@ body.home .page-hero{
   font-weight: 900;
   background: rgba(155,109,109,0.12);
   border: 1px solid rgba(155,109,109,0.20);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /* footer */
@@ -466,6 +470,36 @@ input:focus, select:focus, textarea:focus{
     grid-template-columns: 1fr;
   }
 }
+
+/* Instagram gallery: 2 columns on desktop, 1 on mobile */
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+/* Make each grid item behave */
+.gallery .g-item{
+  min-width: 0;
+}
+
+/* Force IG embed to fit the column */
+.gallery .instagram-media{
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+/* Mobile: stack */
+@media (max-width: 900px){
+  .gallery{
+    grid-template-columns: 1fr;
+  }
+}
+
+
 @media (max-width: 900px){
   .mock-hero-overlay{
     width: 300px;
